@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function validateDetails()
+{
+	
+	var fname=document.getElementById("firstName").value;
+	if(fname == "" || fname == null){
+		alert("First name field cannot be left empty");
+	}
+	var lname=document.getElementById("lastName").value;
+	if(lname == "" || lname==null){
+		alert("Last name field cannot be left empty");
+	}
+	if(fname.length+lname.length>15)
+	{
+		alert("name cannot be more than 15 character");
+	}
+	var sal=document.getElementById("salary").value;
+	if(sal=="" || sal==null)
+	{
+		alert("salary cannot be null");
+		if(parseInt(sal)<0){
+		alert("salary cannot be negative");
+		}
+	}
+	var address=document.getElementById("address").value;
+	if(address == "" || address == null){
+		alert("address cannot be empty");
+	}
+}
+</script>
+</head>
+<body>
+<fieldset>
+<h1><b>Employee Details</b></h1>
+<div style="float">
+<form action="" method="post">
+Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="title">
+<option value="Mr.">Mr.</option>
+<option value="Mrs.">Mrs.</option>
+<option value="Ms.">Ms.</option>
+</select>
+<br><br>
+First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="firstName" id="firstName"/><br><br>
+Last Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="lastName" id="lastName"/><br><br>
+Gross Salary:&nbsp;&nbsp;
+<input type="text" name="salary" id="salary"/><br><br>
+Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<textarea name="Address" id="address"></textarea><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="submit" onclick="validateDetails()">Salary Slip</button>
+</form>
+</div>
+</fieldset>
+</body>
+</html>
